@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer utilities {
+  .final-w{
+    max-width:1200px;
+  }
+  .m-color{
+    color:#3498db
+  }
+  .h-color:hover{
+    color:#3498db;
+  }
+}
+
+
+
+
+html {
+  scroll-behavior: smooth;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "open Sans" ,"Droid Sans", "Helvetica Neue", sans-serif;
+
+}

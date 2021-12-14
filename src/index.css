@@ -2,21 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer utilities {
-  .final-w{
-    max-width:1200px;
+  .final-w {
+    max-width: 1200px;
   }
-  .m-color{
-    color:#3498db
+  .m-color {
+    color: #3498db;
   }
-  .h-color:hover{
-    color:#3498db;
+  .h-color:hover {
+    color: #3498db;
   }
+  .bg-color {
+    background: rgba(52 ,152 ,219,0.6);
+  }
+  .h-line{
+    border-top:2px solid rgba(0,0,0,0.6);
+  }
+  .box:hover img{
+    transform:rotate(3deg) scale(1.1);
+  }
+  .box:hover h3{
+   bottom:0;
+  }
+  .btn-bottom{
+    bottom:500px;
+  }
+  
 }
-
-
-
 
 html {
   scroll-behavior: smooth;
@@ -27,6 +39,5 @@ html {
   padding: 0;
 }
 body {
-  font-family: "open Sans" ,"Droid Sans", "Helvetica Neue", sans-serif;
-
+  font-family: "open Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }

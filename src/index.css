@@ -2,6 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  /*container*/
+  .glo-container{
+@apply container mx-auto px-4 pb-6 pt-16 lg:py-5
+  }
+  /* About Components */
+  .testi-in-div{
+    @apply flex items-center  flex-col sm:flex-row mb-4;
+  }
+  .testi-img {
+    @apply mr-6 w-28 h-28 rounded-full;
+  }
+  .testi-txt {
+    @apply text-center sm:text-left text-gray-700;
+  }
+  .about-heads {
+    @apply text-gray-900 text-xl font-medium mb-3;
+  }
+  .about-txt {
+    @apply w-full  text-gray-400 sm:w-96 mx-auto;
+  }
+  .skills-span {
+    @apply text-white py-1 px-4 bg-blue-600 block;
+  }
+  .skills-div {
+    @apply bg-gray-300 h-8 w-full rounded-md overflow-hidden;
+  }
+  /* anther Components */
+}
+
 @layer utilities {
   .final-w {
     max-width: 1200px;
@@ -32,20 +62,19 @@
     padding-bottom: 10px;
     font-size: 0.75rem;
   }
-  footer:before{
-    content:"";
-    background:rgba(0,0,0,0.5);
-    position:absolute;
-    top:0;
-    left:0;
-    bottom:0;
-    right:0;
+  footer:before {
+    content: "";
+    background: rgba(0, 0, 0, 0.4);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
   }
   @media (min-width: 320px) {
     table {
-     width:100%;
+      width: 100%;
     }
-   
   }
 
   @media (min-width: 480px) {
@@ -54,7 +83,7 @@
       padding-bottom: 7px;
       text-align: center;
     }
-    tbody:not(:last-child)  td span{
+    tbody:not(:last-child) td span {
       border-bottom: 1px solid #2563eb;
     }
   }

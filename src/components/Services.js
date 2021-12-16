@@ -35,7 +35,7 @@ export default function Services() {
   // const inner = [1,2,3,4].map(e=>)
 
   return (
-    <div className="py-16">
+    <div className="py-16" id="services">
       <div className="container py-3 lg:py-5  final-w mx-auto px-4">
         <Heading title={hData[0]} text={hData[1]} active="true" />
         <div className="flex flex-col items-center  lg:flex-row lg:flex-wrap  lg:justify-between" >

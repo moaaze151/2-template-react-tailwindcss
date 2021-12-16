@@ -2,9 +2,26 @@ import React, { useState } from "react";
 
 export default function Header() {
   const [active, setActive] = useState(false);
+  const [bgActive, setBgActive] = useState(false);
+  window.addEventListener("scroll", () => {
+    if(active === true){setActive(false)}
+    if (window.scrollY > window.innerHeight - 60) {
+      setBgActive(true);
+    } else {
+      setBgActive(false);
+    }
+  });
   return (
-    <header className=" text-white w-full fixed px-4">
-      <div className="container py-3 lg:py-5  final-w mx-auto grid grid-cols-12 items-center lg:gap-20 border-b-2 border-gray-500 relative">
+    <header
+      className={`${
+        bgActive && "bg-gray-700"
+      } text-white w-full fixed z-30 px-4 transition-all duration-300 ease-in-out`}
+    >
+      <div
+        className={`${
+          !bgActive && "border-b-2"
+        } container py-3 lg:py-5  final-w mx-auto grid grid-cols-12 items-center lg:gap-20  border-gray-500 relative`}
+      >
         {/* logo */}
         <div className="col-span-5 sm:col-span-4  lg:col-span-2 flex items-center">
           <i className="fas fa-ghost mr-2 m-color sm:text-2xl"></i>
@@ -13,12 +30,24 @@ export default function Header() {
         {/* links */}
         <div className="hidden lg:block lg:col-span-8">
           <ul className="flex justify-between">
-            <li className="h-color">Home</li>
-            <li className="h-color">Services</li>
-            <li className="h-color">Portfolio</li>
-            <li className="h-color">About</li>
-            <li className="h-color">Pricing</li>
-            <li className="h-color">Contact</li>
+            <li className="h-color">
+              <a href="#">Home</a>
+            </li>
+            <li className="h-color">
+              <a href="#services">Services</a>
+            </li>
+            <li className="h-color">
+              <a href="#portfolio">Portfolio</a>
+            </li>
+            <li className="h-color">
+              <a href="#about">About</a>
+            </li>
+            <li className="h-color">
+              <a href="#pricing">Pricing</a>
+            </li>
+            <li className="h-color">
+              <a href="#contact">Contact</a>
+            </li>
           </ul>
         </div>
 
@@ -33,30 +62,35 @@ export default function Header() {
         {/* Menu Icon*/}
         <div className="col-span-4 sm:col-span-3 flex justify-end lg:hidden ">
           <div className="icon">
-            <i className="fas fa-bars mr-2 cursor-pointer" onClick={() => setActive(!active)}></i>Menu
+            <i
+              className="fas fa-bars mr-2 cursor-pointer"
+              onClick={() => setActive(!active)}
+            ></i>
+            Menu
           </div>
         </div>
         {/* Menu */}
         {active && (
-          <div className="rounded-md lg:hidden w-full bg-white absolute top-16 text-black inset-x-0 ease-in-out duration-400 transition-all">
+          <div className="rounded-md lg:hidden w-full bg-gray-600 absolute top-16 text-black inset-x-0 ease-in-out duration-400 transition-all">
             <ul className="text-lg lg:text-base flex flex-col justify-between text-center cursor-pointer p-8 ">
-              <li className="pb-4 hover:text-gray-500 text-black ease-in-out duration-300 transition-all">
-                Home
+              <li className="pb-4 hover:text-gray-50 text-black ease-in-out duration-300 transition-all">
+                <a href="#services">Home</a>
               </li>
-              <li className="pb-4 h-color text-black ease-in-out duration-300 transition-all">
-                Services
+              <li className="pb-4 hover:text-gray-50 text-black ease-in-out duration-300 transition-all">
+                <a href="#services">Services</a>
               </li>
-              <li className="pb-4 h-color text-black ease-in-out duration-300 transition-all">
-                Portfolio
+              <li className="pb-4 hover:text-gray-50 text-black ease-in-out duration-300 transition-all">
+                <a href="#portfolio">Portfolio</a>
               </li>
-              <li className="pb-4 h-color text-black ease-in-out duration-300 transition-all">
-                About
+              <li className="pb-4 hover:text-gray-50 text-black ease-in-out duration-300 transition-all">
+                <a href="#about">About</a>
               </li>
-              <li className="pb-4 h-color text-black ease-in-out duration-300 transition-all">
-                Pricing
+
+              <li className="pb-4 hover:text-gray-50 text-black ease-in-out duration-300 transition-all">
+                <a href="#pricing">Pricing</a>
               </li>
-              <li className=" h-color text-black ease-in-out duration-300 transition-all">
-                Contact
+              <li className="hover:text-gray-50 text-black ease-in-out duration-300 transition-all">
+                <a href="#contact">Contact</a>
               </li>
             </ul>
           </div>
